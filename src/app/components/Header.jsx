@@ -1,7 +1,19 @@
+"use client";
+import { auth } from "@/firebase/config";
+import { signOut } from "firebase/auth";
 import Link from "next/link";
 import React from "react";
-
+import { useAuthState } from "react-firebase-hooks/auth";
 const Header = () => {
+  const [user] = useAuthState(auth);
+  console.log({ user });
+  const handleLogout = async () => {
+    try {
+      await signOut(auth);
+    } catch (error) {
+      console.log(error);
+    }
+  };
   const navItems = [
     { id: 1, href: "/", title: "Home" },
     { id: 2, href: "/menu", title: "Menu" },
@@ -23,12 +35,21 @@ const Header = () => {
             {nav.title}
           </Link>
         ))}
-        <Link
-          href=""
-          className="rounded-full bg-[#2D5E2E] px-6 py-1 text-slate-200 font-semibold"
-        >
-          Login
-        </Link>
+        {!user ? (
+          <Link
+            href="/login"
+            className="rounded-full bg-[#2D5E2E] px-6 py-1 text-slate-200 font-semibold"
+          >
+            Login
+          </Link>
+        ) : (
+          <button
+            onClick={handleLogout}
+            className="rounded-full bg-[#2D5E2E] px-6 py-1 text-slate-200 font-semibold"
+          >
+            Logout
+          </button>
+        )}
       </nav>
     </header>
   );

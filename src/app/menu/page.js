@@ -135,9 +135,9 @@ const Menu = () => {
           WebkitTextFillColor: "currentColor",
           transform: "skew(-20deg)",
         }}
-        className="text-5xl text-transparent font-bold w-[40%] leading-[60px] my-8"
+        className="text-5xl text-transparent font-bold leading-[60px] my-8 text-center"
       >
-        hii
+        Menu
       </h1>
       <div className="flex gap-[55px] flex-wrap">
         {burgerList.map((menuItem) => (
