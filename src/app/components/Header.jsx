@@ -5,11 +5,10 @@ const Header = () => {
   const navItems = [
     { id: 1, href: "/", title: "Home" },
     { id: 2, href: "/menu", title: "Menu" },
-    { id: 2, href: "/about", title: "About" },
-    { id: 3, href: "/contact", title: "Contact" },
+    { id: 3, href: "/about", title: "About" },
+    { id: 4, href: "/contact", title: "Contact" },
   ];
   return (
-    // <header className="flex items-center justify-between shadow-md px-4 rounded-md bg-[#98BC62]">
     <header className="flex items-center justify-between shadow-md px-4 rounded-md bg-[#cff0d0fb]">
       <h1 className="text-[#2D5E2E] text-2xl font-bold cursor-pointer">
         Food Corner

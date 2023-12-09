@@ -1,11 +1,13 @@
 import Image from "next/image";
 import React from "react";
 import TopText from "./TopText";
+import Link from "next/link";
 
 const TopMenu = () => {
   const topMenus = [
     {
       id: 1,
+      route: "burger",
       title: "Burger",
       price: 8.99,
       src: "/burger-4.jpg",
@@ -14,6 +16,7 @@ const TopMenu = () => {
     },
     {
       id: 2,
+      route: "ice-cream",
       title: "Ice-Cream",
       price: 4.5,
       src: "/ice-cream.jpg",
@@ -22,6 +25,7 @@ const TopMenu = () => {
     },
     {
       id: 3,
+      route: "pizza",
       title: "Pizza",
       price: 12.99,
       src: "/pizza.jpg",
@@ -34,13 +38,16 @@ const TopMenu = () => {
       <TopText title="Our Top Menu" />
       <div className="flex items-center justify-between gap-6">
         {topMenus.map((menuItem) => (
-          <div key={menuItem.id} className="flex flex-col items-center">
-            <div className="h-[400px]">
+          <div
+            key={menuItem.id}
+            className="flex flex-col items-center justify-start"
+          >
+            <div className="h-[300px] w-[400px] relative mb-4">
               <Image
                 src={menuItem.src}
-                height={100}
-                width={300}
-                className="text-center rounded-sm"
+                layout="fill"
+                className="text-center rounded-lg object-fit"
+                alt="image"
               />
             </div>
             <div className=" text-slate-700 ">
@@ -49,9 +56,11 @@ const TopMenu = () => {
               </h3>
               <p className=" font-medium my-2">{menuItem.description}</p>
               <h2 className="font-bold">{`$${menuItem.price}`}</h2>
-              <button className="text-slate-200 bg-[#317875f8] px-4 py-1 rounded-md mt-2">
-                See More
-              </button>
+              <Link href={`/menu/${menuItem.route}`}>
+                <button className="text-slate-200 bg-[#317875f8] px-4 py-1 rounded-md mt-2">
+                  See More
+                </button>
+              </Link>
             </div>
           </div>
         ))}
