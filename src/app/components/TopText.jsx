@@ -5,8 +5,11 @@ const TopText = (props) => {
     <header
       style={{
         transform: "skew(-20deg)",
+        backgroundImage: " linear-gradient(#2D5E2E,#98BC62)",
+        WebkitBackgroundClip: "text",
+        WebkitTextFillColor: "currentColor",
       }}
-      className="text-center text-3xl font-medium text-[#e4cba4] bg-[#317875f8] p-4 w-2/6 rounded-md mx-auto mb-8"
+      className="text-5xl text-transparent font-bold text-center leading-[60px] my-8"
     >
       {props.title}
     </header>

@@ -1,4 +1,5 @@
 import SingleItem from "@/app/components/SingleItem";
+import TopText from "@/app/components/TopText";
 
 const page = ({ params }) => {
   const burgerList = [
@@ -129,16 +130,8 @@ const page = ({ params }) => {
   ];
   return (
     <div>
-      <h1
-        style={{
-          backgroundImage: " linear-gradient(#2D5E2E,#98BC62)",
-          WebkitBackgroundClip: "text",
-          WebkitTextFillColor: "currentColor",
-        }}
-        className="text-5xl text-transparent font-bold w-[40%] leading-[60px] my-8"
-      >
-        {`Pick your favourite ${params.catagory}`}
-      </h1>
+      <TopText title={`Pick your favourite ${params.catagory}`} />
+
       <div className="flex flex-col gap-6">
         {params.catagory === "burger"
           ? burgerList.map((menuItem) => <SingleItem menuItem={menuItem} />)

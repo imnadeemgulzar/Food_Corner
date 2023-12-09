@@ -7,13 +7,16 @@ const AboutUs = () => {
     <div className="my-8">
       <TopText title="About Us" />
       <div className="flex items-start justify-between gap-4">
-        <Image
-          src="/aboutUs.jpg"
-          height={600}
-          width={600}
-          className="rounded-md"
-        />
-
+        <div className="w-full h-[400px] relative">
+          <Image
+            src="/aboutUs.jpg"
+            layout="fill"
+            alt="about us"
+            // height={600}
+            // width={600}
+            className="rounded-md object-fit"
+          />
+        </div>
         <div className="px-4 text-slate-700 font-medium leading-8">
           <p className="mb-2">
             <span className="text-lg text-[#317875f8]">

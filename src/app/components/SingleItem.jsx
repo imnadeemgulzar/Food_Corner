@@ -30,6 +30,7 @@ const SingleItem = ({ menuItem }) => {
         <Image
           src={menuItem.src}
           layout="fill"
+          sizes=""
           className=" rounded-lg object-fit"
           alt="image"
         />
